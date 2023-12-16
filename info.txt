@@ -1,0 +1,92 @@
+https://go.dev/doc/code#Command
+
+Мы можем для каждого проекта устанавливать свой GOPATH в bashrc
+export GOPATH="/home/andriy/GoLang/gopath2"
+
+Следует заметить, что попытка применить
+$ go env -w GOPATH=/home/andriy/GoLang/gopath
+warning: go env -w GOPATH=... does not override conflicting OS environment variable
+
+Если затереть
+export GOPATH="/home/andriy/GoLang/gopath2"
+в bashrc
+
+то 
+go env -w GOPATH=/home/andriy/GoLang/gopath
+будет работать, и эта переменная даже сохранится после перезагрузки.
+
+
+
+$ go env -w GO111MODULE=on
+$ go env GO111MODULE
+
+
+Далее
+$ go mod tidy
+
+установит зависимости в GOPATH
+
+
+---------
+Пути.
+
+Даже если не использовать GIT то все равно лучше использовать
+имя модуля типа:
+    github.com/andriykusevol/go_simple_template
+
+Пакет (подкаталог с файлами 'package packageone' в начале) тогда подключается как
+    import (
+        "github.com/andriykusevol/go_simple_template/packageone"
+    )
+
+Причем 'package packageone' в файлах пакета, должно соответствовать имени подкаталога пакета.
+
+
+Когда мы билдим наш мудуль "make build"
+имя бинарника получается из имени модуля.
+Т.е если в go.mod было
+"module github.com/andriykusevol/go_simple_template"
+то имя бинарника будет "go_simple_template"
+
+
+---------
+
+GitHub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
