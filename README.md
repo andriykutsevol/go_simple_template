@@ -5,4 +5,4 @@ In that folder create the "GOPATH" folder. It will be used as GOPATH for the pro
 
 Clone this repo into that folder.
 
-Run 'make set_vars', 'make install_deps'
+Run 'make set_vars', 'make install_deps', etc...
